@@ -1,0 +1,98 @@
+% author: Bruno Normande
+% tipo de documento tem que ser "beamer" para fazer apresentação
+\documentclass[11pt]{beamer}
+
+% Alguns pacotes interessantes
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage{natbib}
+\usepackage{url}
+\usepackage{cite}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx,subfigure}
+
+% Existem várias combinações de temas e cores
+% para vê-los: http://www.hartwork.org/beamer-theme-matrix/
+\usetheme{Madrid}
+\usecolortheme{beaver}
+
+% título autor e datas serão formatados
+% automaticamente quando usar o comando \maketitle
+\title{Um Exemplo de Apresentação}
+\author[Bruno N. Lins]{Bruno Normande Lins}
+\date{\today}
+
+% Marca o início do documento
+\begin{document}
+
+	% Esse frame inicial contém o título ;D
+	\begin{frame}{}
+		\maketitle
+	\end{frame}
+	
+	% Esse comando inclui no começo de cada sessão o Roteiro da apresentação
+	\AtBeginSection[]{
+		\begin{frame}[<+-| alert@+>]{Roteiro da Apresentação}
+			\small
+			\tableofcontents[current,currentsection]
+		\end{frame}
+	}
+	
+	% Agora começa de verdade %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% Toda section é indexada automaticamente
+	\section{Primeira sessão}
+	
+	\begin{frame}{Aqui fica o título do frame}
+	
+		\begin{block}{Título do block}
+			Isso é um um block ;D
+		\end{block}
+		
+		E aqui um texto sem bloco
+		
+		\begin{center}
+			posso pôr também centralizado...
+		\end{center}
+		
+		\hfill Ou alinhado à direita	
+		
+	\end{frame}
+	
+	\subsection{Também podemos pôr sub-sessões}
+
+		\begin{frame}{}
+	
+		\begin{block}{}
+			Nem o frame nem o block precisam necessariamente de títulos
+		\end{block}
+		
+		% Divide o frame fazendo uma "pausa dramática"
+		\pause 
+		\begin{alertblock}{}
+			\hfill O alertblock é um block de cor diferente
+		\end{alertblock}
+		
+		%espaçamento vertical
+		\vspace{1.5cm}
+		;D isso está um pouco mais abaixo =x			
+		
+	\end{frame}
+	
+	\section{Imagens e tabelas}
+	
+	\begin{frame}{Vamos pôr uma imagem agora}
+	
+		% usamos o ambiente 'figure' pq ele já faz várias coisas automaticamente
+		\begin{figure}
+			\centering %como centralizar
+			\includegraphics[width=\linewidth]{random.jpg} % defino o width = width de um linha
+			\caption{``Random Numbers''} % na figure podemos por uma legenda - e aproveito para mostrar como fazer aspas ;D
+			\label{fig:random} % posso atribuir um label para usar como referencia
+		\end{figure}
+		
+		E aqui a refer
+		
+	\end{frame}	
+	
+\end{document}
