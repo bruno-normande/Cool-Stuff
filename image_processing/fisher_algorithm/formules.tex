@@ -1,0 +1,16 @@
+\documentclass[a4paper]{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\begin{align*}
+	N_1 &= \sum _{k = 1} ^ {S} H(k) \\
+	N_2 &= \sum _{k = T} ^ {256} H(k) \\
+	\mu_1 &= \frac{1}{N_1} \sum _{k = 1} ^ {S} k \times H(k) \\
+	\mu_2 &= \frac{1}{N_2} \sum _{k = T} ^ {256} k \times H(k) \\ 
+	\sigma_1 &= \frac{1}{N_1} \sum _{k = 1} ^ {S} H(k) \times (k - \mu_1) \\
+	\sigma_2 &= \frac{1}{N_2} \sum _{k = T} ^ {256} H(k) \times (k - \mu_2) \\
+	D(T) &= \frac{(N_1 + N_2) \times (\mu_1 - \mu_2)^2}{\sigma_1^2 + \sigma_2^2}
+\end{align*}
+
+\end{document}
