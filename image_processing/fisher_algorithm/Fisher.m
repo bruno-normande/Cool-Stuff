@@ -5,7 +5,6 @@
 ## Author: Bruno Normande Lins (aka. Jollyrog3r)
 
 function Threshold = Fisher(Histogram)
-
   HistSize = size(Histogram)(2);
   N = zeros(2); 		# N will contain the sum of each segments values
   N(1) = Histogram(1);		# left side

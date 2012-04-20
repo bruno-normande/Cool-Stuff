@@ -6,7 +6,7 @@
 
 clear all;
 close all;
-
+## Loads the image and converts it to double so we can propery work on it
 ImageChocolat = double(imread('Chocolat.jpg'));
 [Nlin, Ncol] = size(ImageChocolat);
 ## Printing the original image
@@ -15,7 +15,8 @@ imshow(uint8(ImageChocolat));
 title("Original Image");
 axis('image');
 
-## transform the image into a array so we can take its histogram
+## transform the image matrix into a array so we can pass it
+## to historigram builtin function
 ImageArray = zeros(1, Nlin*Ncol);
 k = 1;
 for lin=1:Nlin
@@ -24,7 +25,7 @@ for lin=1:Nlin
     k = k+1;
   end
 end
-## Histogram normalized from the images 256 gray levels
+## We calculate the histogram and nomalize it
 Hist = hist(ImageArray,256)/ (size(ImageArray)(2));
 
 ## Plotting the histogram
